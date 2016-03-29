@@ -1,0 +1,26 @@
+<fmm:MethodMap xmlns:fmm="http://fedora.comm.nsdlib.org/service/methodmap" name="Fedora MethodMap for SDef">
+  <fmm:Method operationName="dc">
+    <fmm:UserInputParm defaultValue="no" parmName="CLEAR_CACHE" passBy="VALUE" required="false">
+      <fmm:ValidParmValues>
+        <fmm:ValidParm value="yes"></fmm:ValidParm>
+        <fmm:ValidParm value="no"></fmm:ValidParm>
+      </fmm:ValidParmValues>
+    </fmm:UserInputParm>
+  </fmm:Method>
+  <fmm:Method operationName="mods">
+    <fmm:UserInputParm defaultValue="no" parmName="CLEAR_CACHE" passBy="VALUE" required="false">
+      <fmm:ValidParmValues>
+        <fmm:ValidParm value="yes"></fmm:ValidParm>
+        <fmm:ValidParm value="no"></fmm:ValidParm>
+      </fmm:ValidParmValues>
+    </fmm:UserInputParm>
+  </fmm:Method>
+  <fmm:Method operationName="nl_didl">
+    <fmm:UserInputParm defaultValue="no" parmName="CLEAR_CACHE" passBy="VALUE" required="false">
+      <fmm:ValidParmValues>
+        <fmm:ValidParm value="yes"></fmm:ValidParm>
+        <fmm:ValidParm value="no"></fmm:ValidParm>
+      </fmm:ValidParmValues>
+    </fmm:UserInputParm>
+  </fmm:Method>
+</fmm:MethodMap>

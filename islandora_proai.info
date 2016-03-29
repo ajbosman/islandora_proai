@@ -1,0 +1,5 @@
+name = Islandora PROAI
+description = Configures the use of PROAI.
+dependencies[] = islandora
+core = 7.x
+package = Islandora Tools

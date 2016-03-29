@@ -1,0 +1,131 @@
+<?php
+
+/**
+ * @file
+ * Module used to respond to OAI requests.
+
+todo: oai:tudelft.nl: voor uuid????
+      correcte mods
+      didl container
+      ok / xslt files xsl extensie
+      ok / xslt's: (evt DC2DC DC2DIDL)
+
+testen: deleted records
+        embargo
+
+ */
+
+/**
+ * Implements hook_menu().
+ *
+ */
+function islandora_proai_menu() {
+  $items = array();
+  $items['admin/islandora/tools/proai'] = array(
+    'title' => 'PROAI',
+    'description' => 'Configure the PROAI module',
+    'file' => 'includes/admin.form.inc',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('proai_admin_form'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $items['admin/islandora/tools/proai/proai'] = array(
+    'title' => 'PROAI',
+    'description' => 'Configure the PROAI module',
+    'file' => 'includes/admin.form.inc',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('proai_admin_form'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => 10,
+  );
+  $items['admin/islandora/tools/proai/content_models'] = array(
+    'title' => 'Content models',
+    'description' => 'Enable content models for PROAI.',
+    'file' => 'includes/admin.form.inc',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('proai_cmodels_form'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['admin/islandora/tools/proai/collections'] = array(
+    'title' => 'Collections',
+    'description' => 'Enable collections for PROAI.',
+    'file' => 'includes/admin.form.inc',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('proai_collections_form'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 6,
+  );
+
+  return $items;
+}
+
+/**
+ * Allows modules to alter the object or block/modify the given action.
+ *
+ * This alter hook will be called before any object is ingested, modified or
+ * purged.
+ *
+ * Changing object properties such as "label", or "state", are considered
+ * modifications, where as manipulating an object's datstreams are not.
+ *
+ * @param AbstractObject $object
+ *   The object to alter.
+ * @param array $context
+ *   An associative array containing:
+ *   - action: A string either 'ingest', 'purge', 'modify'.
+ *   - block: Either TRUE or FALSE, if TRUE the action won't take place.
+ *     Defaults to FALSE.
+ *   - purge: Either TRUE or FALSE, only present when the action is 'purge'.
+ *     If 'delete' or 'block' is set to TRUE, they will take precedence.
+ *     Defaults to TRUE.
+ *   - delete: Either TRUE or FALSE, only present when the action is 'purge'.
+ *     If TRUE it will cause the object's state to be set to 'D' instead.
+ *     If 'block' is set to TRUE, it will take precedence.
+ *     Defaults to FALSE,
+ *   - params: An associative array, only present when the action is 'modify'.
+ *     The key value pairs repersent what values will be changed. The params
+ *     will match the same params as passed to FedoraApiM::modifyObject().
+ *
+ * @see FedoraApiM::modifyObject()
+ */
+function islandora_proai_islandora_object_alter(AbstractObject $object, array &$context) {
+  if (($context['action'] == 'ingest') || ($context['action'] == 'modify')) {
+    //get content models and collections
+    $collections_saved = variable_get('islandora_proai_collections',  array());
+    $cmodels_saved = variable_get('islandora_proai_cmodels', array());
+    $cmodels = $object->relationships->get(FEDORA_MODEL_URI,'hasModel');
+    $collections = $object->relationships->get(FEDORA_RELS_EXT_URI,'isMemberOfCollection');
+    $object_itemid = $object->relationships->get('http://www.openarchives.org/OAI/2.0/','itemID');
+    
+    if (islandora_proai_is_proai_object($cmodels, $cmodels_saved, $collections, $collections_saved)) {
+      if (count($object_itemid) == 0) $object->relationships->add('http://www.openarchives.org/OAI/2.0/','itemID',$object->id,RELS_TYPE_PLAIN_LITERAL);
+    }
+    else { 
+      if (count($object_itemid) > 0) $object->relationships->remove('http://www.openarchives.org/OAI/2.0/','itemID');
+    }
+  }
+}
+
+function islandora_proai_is_proai_object($cmodels, $cmodels_saved, $collections, $collections_saved) {
+  //an object is a proai object if at least one of its content models is in $cmodels_saved 
+  //                           and at least one of its collections is in $collections_saved
+  $checkModels = FALSE;
+  $i = 0;
+  while (!$checkModels && ($i < count($cmodels))) {
+    $m = $cmodels[$i]['object']['value'];
+    $checkModels = in_array($m, $cmodels_saved);
+    $i++;
+  }
+  $checkCollections = FALSE;
+  $i = 0;
+  while (!$checkCollections && ($i < count($collections))) {
+    $c = $collections[$i]['object']['value'];
+    $checkCollections = array_key_exists($c, $collections_saved);
+    $i++;
+  }
+  return ($checkModels && $checkCollections);
+}

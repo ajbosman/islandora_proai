@@ -1,0 +1,32 @@
+<fbs:DSInputSpec xmlns:fbs="http://fedora.comm.nsdlib.org/service/bindspec" label="Data profile mapping to the Fedora Local Saxon Service">
+  <fbs:DSInput DSMax="1" DSMin="1" DSOrdinality="false" wsdlMsgPartName="DC">
+    <fbs:DSInputLabel>XML source file</fbs:DSInputLabel>
+    <fbs:DSMIME>text/xml</fbs:DSMIME>
+    <fbs:DSInputInstruction>N/A</fbs:DSInputInstruction>
+  </fbs:DSInput>
+  <fbs:DSInput DSMax="1" DSMin="1" DSOrdinality="false" wsdlMsgPartName="MODS">
+    <fbs:DSInputLabel>XML source file</fbs:DSInputLabel>
+    <fbs:DSMIME>text/xml</fbs:DSMIME>
+    <fbs:DSInputInstruction>N/A</fbs:DSInputInstruction>
+  </fbs:DSInput>
+  <fbs:DSInput DSMax="1" DSMin="1" DSOrdinality="false" wsdlMsgPartName="RELS-EXT">
+    <fbs:DSInputLabel>XML source file</fbs:DSInputLabel>
+    <fbs:DSMIME>text/xml</fbs:DSMIME>
+    <fbs:DSInputInstruction>N/A</fbs:DSInputInstruction>
+  </fbs:DSInput>
+  <fbs:DSInput DSMax="1" DSMin="1" DSOrdinality="false" pid="aux:xslt" wsdlMsgPartName="COPY">
+    <fbs:DSInputLabel>XSLT stylesheet file</fbs:DSInputLabel>
+    <fbs:DSMIME>text/xml</fbs:DSMIME>
+    <fbs:DSInputInstruction>N/A</fbs:DSInputInstruction>
+  </fbs:DSInput>
+  <fbs:DSInput DSMax="1" DSMin="1" DSOrdinality="false" pid="aux:xslt" wsdlMsgPartName="MODS2MODS">
+    <fbs:DSInputLabel>XSLT stylesheet file</fbs:DSInputLabel>
+    <fbs:DSMIME>text/xml</fbs:DSMIME>
+    <fbs:DSInputInstruction>N/A</fbs:DSInputInstruction>
+  </fbs:DSInput>
+  <fbs:DSInput DSMax="1" DSMin="1" DSOrdinality="false" pid="aux:xslt" wsdlMsgPartName="MODS2DIDL">
+    <fbs:DSInputLabel>XSLT stylesheet file</fbs:DSInputLabel>
+    <fbs:DSMIME>text/xml</fbs:DSMIME>
+    <fbs:DSInputInstruction>N/A</fbs:DSInputInstruction>
+  </fbs:DSInput>
+</fbs:DSInputSpec>

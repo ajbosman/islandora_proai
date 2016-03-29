@@ -1,0 +1,82 @@
+<wsdl:definitions
+  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap"
+  xmlns:soapenc="http://schemas.xmlsoap.org/wsdl/soap/encoding"
+  xmlns:this="saxon"
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  name="Fedora_Local_Saxon_Service"
+  targetNamespace="saxon">
+  <wsdl:types>
+    <xsd:schema targetNamespace="saxon">
+      <xsd:simpleType name="URLType">
+        <xsd:restriction base="xsd:string"></xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="CLEAR_CACHEType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="yes"></xsd:enumeration>
+          <xsd:enumeration value="no"></xsd:enumeration>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="keyType">
+        <xsd:restriction base="xsd:string"></xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="dcRequest">
+            <wsdl:part name="source" type="this:URLType"></wsdl:part>
+            <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
+            <wsdl:part name="key" type="this:keyType"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modsRequest">
+            <wsdl:part name="source" type="this:URLType"></wsdl:part>
+            <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
+            <wsdl:part name="key" type="this:keyType"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="nl_didlRequest">
+            <wsdl:part name="source" type="this:URLType"></wsdl:part>
+            <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
+            <wsdl:part name="key" type="this:keyType"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="response">
+    <wsdl:part name="response" type="xsd:base64Binary"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="FedoraSaxonPortType">
+    <wsdl:operation name="dc">
+      <wsdl:input message="this:dcRequest"/>
+      <wsdl:output message="this:response"/>
+    </wsdl:operation>
+    <wsdl:operation name="mods">
+      <wsdl:input message="this:modsRequest"/>
+      <wsdl:output message="this:response"/>
+    </wsdl:operation>
+    <wsdl:operation name="nl_didl">
+      <wsdl:input message="this:nl_didlRequest"/>
+      <wsdl:output message="this:response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="FedoraSaxon">
+    <wsdl:port binding="this:FedoraSaxon_http" name="FedoraSaxon_port">
+      <http:address location="http://local.fedora.server/saxon/"></http:address>
+    </wsdl:port>
+  </wsdl:service>
+  <wsdl:binding name="FedoraSaxon_http" type="this:FedoraSaxonPortType">
+    <http:binding verb="GET"></http:binding>
+    <wsdl:operation name="dc">
+      <http:operation location="SaxonServlet?source=(DC)&amp;style=(COPY)&amp;clear-stylesheet-cache=(CLEAR_CACHE)"></http:operation>
+      <wsdl:input></wsdl:input>
+      <wsdl:output></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mods">
+      <http:operation location="SaxonServlet?source=(MODS)&amp;style=(MODS2MODS)&amp;clear-stylesheet-cache=(CLEAR_CACHE)"></http:operation>
+      <wsdl:input></wsdl:input>
+      <wsdl:output></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mods">
+      <http:operation location="SaxonServlet?source=(MODS)&amp;style=(MODS2DIDL)&amp;clear-stylesheet-cache=(CLEAR_CACHE)"></http:operation>
+      <wsdl:input></wsdl:input>
+      <wsdl:output></wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>
