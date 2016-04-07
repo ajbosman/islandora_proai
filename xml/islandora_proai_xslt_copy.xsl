@@ -8,7 +8,6 @@
   version="2.0"
   xpath-default-namespace="">
   <xsl:template match="/">
-    <xsl:text>COPY</xsl:text>
     <xsl:copy-of select="."/>
   </xsl:template>
 </xsl:stylesheet>

@@ -2,33 +2,36 @@
   <fmm:Method operationName="dc" wsdlMsgName="dcRequest" wsdlMsgOutput="response">
     <fmm:UserInputParm defaultValue="no" parmName="CLEAR_CACHE" passBy="VALUE" required="false">
       <fmm:ValidParmValues>
-        <fmm:ValidParm value="yes"></fmm:ValidParm>
-        <fmm:ValidParm value="no"></fmm:ValidParm>
+        <fmm:ValidParm value="yes"/>
+        <fmm:ValidParm value="no"/>
       </fmm:ValidParmValues>
     </fmm:UserInputParm>
-    <fmm:UserInputParm defaultValue="" parmName="key" passBy="VALUE" required="false"></fmm:UserInputParm>
+    <fmm:UserInputParm defaultValue="" parmName="key" passBy="VALUE" required="false"/>
+    <fmm:DefaultInputParm parmName="pid" defaultValue="$pid" passBy="VALUE" required="true"/>
     <fmm:DatastreamInputParm parmName="DC" passBy="URL_REF" required="true"/>
     <fmm:MethodReturnType wsdlMsgName="response" wsdlMsgTOMIME="N/A"/>
   </fmm:Method>
   <fmm:Method operationName="mods" wsdlMsgName="modsRequest" wsdlMsgOutput="response">
     <fmm:UserInputParm defaultValue="no" parmName="CLEAR_CACHE" passBy="VALUE" required="false">
       <fmm:ValidParmValues>
-        <fmm:ValidParm value="yes"></fmm:ValidParm>
-        <fmm:ValidParm value="no"></fmm:ValidParm>
+        <fmm:ValidParm value="yes"/>
+        <fmm:ValidParm value="no"/>
       </fmm:ValidParmValues>
     </fmm:UserInputParm>
-    <fmm:UserInputParm defaultValue="" parmName="key" passBy="VALUE" required="false"></fmm:UserInputParm>
+    <fmm:UserInputParm defaultValue="" parmName="key" passBy="VALUE" required="false"/>
     <fmm:DatastreamInputParm parmName="MODS" passBy="URL_REF" required="true"/>
+    <fmm:DefaultInputParm parmName="pid" defaultValue="$pid" passBy="VALUE" required="true"/>
     <fmm:MethodReturnType wsdlMsgName="response" wsdlMsgTOMIME="N/A"/>
   </fmm:Method>
   <fmm:Method operationName="nl_didl" wsdlMsgName="nl_didlRequest" wsdlMsgOutput="response">
     <fmm:UserInputParm defaultValue="no" parmName="CLEAR_CACHE" passBy="VALUE" required="false">
       <fmm:ValidParmValues>
-        <fmm:ValidParm value="yes"></fmm:ValidParm>
-        <fmm:ValidParm value="no"></fmm:ValidParm>
+        <fmm:ValidParm value="yes"/>
+        <fmm:ValidParm value="no"/>
       </fmm:ValidParmValues>
     </fmm:UserInputParm>
-    <fmm:UserInputParm defaultValue="" parmName="key" passBy="VALUE" required="false"></fmm:UserInputParm>
+    <fmm:UserInputParm defaultValue="" parmName="key" passBy="VALUE" required="false"/>
+    <fmm:DefaultInputParm parmName="pid" defaultValue="$pid" passBy="VALUE" required="true"/>
     <fmm:DatastreamInputParm parmName="MODS" passBy="URL_REF" required="true"/>
     <fmm:MethodReturnType wsdlMsgName="response" wsdlMsgTOMIME="N/A"/>
   </fmm:Method>

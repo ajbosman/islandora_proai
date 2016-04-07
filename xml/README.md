@@ -53,11 +53,13 @@ Change islandora_proai_identify_identify.xml according to your institution detai
 
 ### Object aux:xslt: new datastream
 
-First a new file containing the content of an XSLT datastream must be added to the directory `/islandora_proai/xml`. It should have a name like islandora_proai_xslt_myxslt.xsl where myxslt can be replaced by the DSID of the new datastream. The ingest function of the module recognizes this name and adds a datastream MYXSLT to the **aux:xslt** object.
+First a new file containing the XSLT must be added to the directory `/islandora_proai/xml`. It should have a name like islandora_proai_xslt_myxslt.xsl where myxslt can be replaced by a DSID of the new datastream. The ingest function of the module recognizes this name and adds a datastream MYXSLT to the **aux:xslt** object.
 
 ## Changing **sdef:oai** and **sdep:oai**
 
-Changing the datastreams of **sdef:oai** and **sdep:oai** boils down to adding XML elements as listed below, while changing:
+Changing the datastreams of **sdef:oai** and **sdep:oai** boils down to adding XML elements in several datastreams.
+
+In the listings below [METHOD_NAME], [DSID_SOURCE] and [DSID_XSLT] must be changed:
 
 * [METHOD_NAME] by a short name, preferable lower case for the method, e.g. nl_didl
 * [DSID_SOURCE] by the datastream id of the datastream that is to be transformed by this method, e.g. MODS 
@@ -91,6 +93,7 @@ Add a new `fmm:Method` element.
       </fmm:ValidParmValues>
     </fmm:UserInputParm>
     <fmm:UserInputParm defaultValue="" parmName="key" passBy="VALUE" required="false"></fmm:UserInputParm>
+    <fmm:DefaultInputParm parmName="pid" defaultValue="$pid" passBy="VALUE" required="true"/>
     <fmm:DatastreamInputParm parmName="[DSID_SOURCE]" passBy="URL_REF" required="true"/>
     <fmm:MethodReturnType wsdlMsgName="response" wsdlMsgTOMIME="N/A"/>
   </fmm:Method>
@@ -123,9 +126,10 @@ Add a new `fbs:DSInput` element with the datastream of the new XSLT datastream:
 Add a new `wsdl:message` element:
 ```
   <wsdl:message name="[METHOD_NAME]Request">
-            <wsdl:part name="source" type="this:URLType"></wsdl:part>
-            <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
-            <wsdl:part name="key" type="this:keyType"></wsdl:part>
+    <wsdl:part name="pid" type="this:inputType"/>
+    <wsdl:part name="source" type="this:URLType"></wsdl:part>
+    <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
+    <wsdl:part name="key" type="this:keyType"></wsdl:part>
   </wsdl:message>
 ```
 
@@ -141,11 +145,37 @@ Within `wsdl:binding` add a new `wsdl:operation` element:
 
 ```
     <wsdl:operation name="[METHOD_NAME]">
-      <http:operation location="SaxonServlet?source=([DSID_SOURCE])&amp;style=([DSID_XSLT])&amp;clear-stylesheet-cache=(CLEAR_CACHE)"></http:operation>
+      <http:operation location="SaxonServlet?source=([DSID_SOURCE])&amp;style=([DSID_XSLT])&amp;thisPid=(pid)&amp;clear-stylesheet-cache=(CLEAR_CACHE)"></http:operation>
       <wsdl:input></wsdl:input>
       <wsdl:output></wsdl:output>
     </wsdl:operation>
 ```
 
+Note that this configures a paramater thisPid that contains the PID of the object that is processed. In XSLT thisPid can be used as a variable.
+
 ## Ingest the datastreams:
 Ingest the objects in the form Administration » Islandora » Islandora Utility Modules » PROAI (admin/islandora/tools/proai). Purge first if they already ingested.
+
+## Debugging XSLT
+First try `http://your.server.somewhere/fedora/objects/PID/methods` where PID is a fedora PID of an object with a PROAI enabled content model. You should see something like:
+
+![PROAI content model](../documentation/methods.JPG)
+
+Click `Run` to test. 
+
+If there is no output the XSLT might not work. The brave can try this on the fedora server in the directory where Fedora is installed:
+
+```
+java -jar ./client/lib/saxon-9.0.jar 
+    -s:http://localhost:8080/fedora/get/PID/MODS 
+    -xsl:http://localhost:8080/fedora/get/aux:xslt/MODS2MODS 
+    thisPid=PID
+```
+
+PID should be replace by a fedora PID of an object with the PROAI enabled content model (2x).
+
+MODS can be replaced by another datastream ID
+
+MODS2MODS can be replaces by another XSLT datastream
+
+If the XSLT contains errors the command gives understandable feedback.

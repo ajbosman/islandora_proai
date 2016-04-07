@@ -20,27 +20,76 @@ include_once 'rels_ext_utilities.inc';
 function proai_admin_form($form, $form_state) {
   //get configuration info
   $config = _proai_config_text();
-
+  $prefix = variable_get('islandora_proai_prefix','');
   $form['islandora_proai_enable'] = array(
     '#type' => 'fieldset',
     '#title' => t('PROAI configuration'),
+  );
+  $form['islandora_proai_enable']['islandora_oai_prefix'] = array(
+    '#type' => 'textfield',
+    '#title' => t('OAI prefix'),
+    '#size' => 80,
+    '#weight' => -1,
+    '#default_value' => $prefix,
+    '#description' => t('The prefix for your institution. After changing the prefix purge and ingest aux:xslt.'),
+  );
+  $form['islandora_proai_enable']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit OAI Prefix'),
+    '#weight' => 10,
+  );
+  
+  $form['islandora_proai_required'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('PROAI required objects'),
     '#prefix' => $config,
   );
-  $form['islandora_proai_enable']['islandora_proai_ingest'] = array(
+  $form['islandora_proai_required']['ingest_all'] = array(
     '#type' => 'submit',
     '#value' => t('Ingest required objects'),
     '#weight' => 10,
   );
-  $form['islandora_proai_enable']['islandora_proai_purge'] = array(
+  $form['islandora_proai_required']['purge_all'] = array(
     '#type' => 'submit',
     '#value' => t('Purge required objects'),
     '#weight' => 20,
   );
-  $form['islandora_proai_enable']['islandora_proai_submit'] = array(
+  $form['islandora_proai_required']['update_objects'] = array(
     '#type' => 'submit',
     '#value' => t('Update objects (max 50)'),
     '#weight' => 30,
   );
+  $form['islandora_proai_required']['sdep'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Manage sdep:oai'),
+    '#weight' => 40,
+  );
+  $form['islandora_proai_required']['sdep']['sdep_purge'] = array(
+    '#type' => 'submit',
+    '#value' => t('Purge sdep:oai'),
+    '#weight' => 50,
+  );
+  $form['islandora_proai_required']['sdep']['sdep_ingest'] = array(
+    '#type' => 'submit',
+    '#value' => t('Ingest sdep:oai'),
+    '#weight' => 60,
+  );
+  $form['islandora_proai_required']['xslt'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Manage aux:xslt'),
+    '#weight' => 70,
+  );
+  $form['islandora_proai_required']['xslt']['xslt_purge'] = array(
+    '#type' => 'submit',
+    '#value' => t('Purge aux:xslt'),
+    '#weight' => 80,
+  );
+  $form['islandora_proai_required']['xslt']['xslt_ingest'] = array(
+    '#type' => 'submit',
+    '#value' => t('Ingest aux:xslt'),
+    '#weight' => 90,
+  );
+  
   return $form;
 }
 
@@ -53,8 +102,16 @@ function proai_admin_form($form, $form_state) {
  *   An array containing the Drupal form state.
  */
 function proai_admin_form_submit($form, $form_state) {
-  //ingest objects if Enable is checked
-  if ($form_state['clicked_button']['#value'] == 'Ingest required objects') {
+  if ($form_state['clicked_button']['#value'] == 'Submit OAI Prefix') {
+    variable_del('islandora_proai_prefix');
+    $prefix = $form_state['values']['islandora_oai_prefix'];
+    $prefix = trim($prefix);
+    $prefix = preg_replace('/(.*):$/', '$1', $prefix);
+    if ($prefix && (strlen($prefix) > 0)) {
+      variable_set('islandora_proai_prefix',$prefix);
+    }
+  }
+  else if ($form_state['clicked_button']['#value'] == 'Ingest required objects') {
     $message = islandora_proai_ingest_objects();
   }
   else if ($form_state['clicked_button']['#value'] == 'Purge required objects') {
@@ -62,6 +119,18 @@ function proai_admin_form_submit($form, $form_state) {
   }
   else if ($form_state['clicked_button']['#value'] == 'Update objects (max 50)') {
     $message = islandora_proai_pids();
+  }
+  else if ($form_state['clicked_button']['#value'] == 'Ingest aux:xslt') {
+    $message = islandora_proai_ingest_objects('aux:xslt');
+  }
+  else if ($form_state['clicked_button']['#value'] == 'Purge aux:xslt') {
+    $message = islandora_proai_purge_objects('aux:xslt');
+  }
+  else if ($form_state['clicked_button']['#value'] == 'Ingest sdep:oai') {
+    $message = islandora_proai_ingest_objects('sdep:oai');
+  }
+  else if ($form_state['clicked_button']['#value'] == 'Purge sdep:oai') {
+    $message = islandora_proai_purge_objects('sdep:oai');
   }
 }
 
@@ -80,6 +149,10 @@ function _proai_config_text() {
     'rows'=>array(),
     'attributes'=>array('class'=>'islandora_proai_table')
   );
+  $prefix = variable_get('islandora_proai_prefix','No prefix defined.');
+  $table['rows'][] =  array(array('data'=>'OAI prefix','header'=>TRUE),array('data'=>'Value','header'=>TRUE));
+  $table['rows'][] =  array('prefix',$prefix);
+
   $table['rows'][] =  array(array('data'=>'Required object','header'=>TRUE),array('data'=>'Status','header'=>TRUE));
   foreach ($configuration['required'] as $k=>$v) {
     $table['rows'][] = array($k,$v);
