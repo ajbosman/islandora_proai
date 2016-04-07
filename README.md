@@ -93,16 +93,7 @@ Then select the collections that are used as sets an give them the appropriate s
 
 ## Customization
 
-It is possible to add XSLT's in the directory islandora_proai\xml. They have to be called islandora_proai_xslt_DSID.xml. Replace DSID by the id of the XSLT datastream. Purge and ingest the required objects again and resubmit the content models configuration.
-
-Customization of the sdep:oai datastreams is done in the xml files: islandora_proai_sdep_dsinputspec.xml, islandora_proai_sdep_methodmap.xml and islandora_proai_sdep_wsdl.xml.
-
-* If you want to provide another type of output: add a `<fmm:Method>` element in islandora_proai_sdep_methodmap.xml.
-* If you want to use other datastreams: add a `<fbs:DSInput>` element in islandora_proai_sdep_dsinputspec.xml.
-* If you want to use another XSLT: also add a `<fbs:DSInput>` element in islandora_proai_sdep_dsinputspec.xml, with the attribute `pid="aux:xslt"`.
-* And modify islandora_proai_sdep_wsdl.xml accordingly.
-
-Note that DC and MODS are already provided in these datastream files. 
+See the xml directory for information about customizing and adding or changing XSLT's
 
 ## Maintainers/Sponsors
 
