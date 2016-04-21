@@ -13,9 +13,9 @@
  *
  */
 
-define('FEDORA_URL', 'http://your.server.somewhere/fedora');
-define('FEDORA_USER','xxxxxxxxx');
-define('FEDORA_PASSWORD','xxxxxxxxx');
+define('FEDORA_URL', 'http://your.server.somewehere/fedora');
+define('FEDORA_USER','fedoraAdmin');
+define('FEDORA_PASSWORD','xxxxxxxx');
 define('OAI_NAMESPACE','http://www.openarchives.org/OAI/2.0/');
 
 include_once 'sites/all/libraries/tuque/RepositoryConnection.php';
@@ -74,7 +74,7 @@ function islandora_proai_pids() {
         $tel++;
         if ($tel % 10 == 0) echo "checked: $tel, removed: $telRemoved\r";
       }
-      echo "\nRemoved itemID from $telRemoved objects.\n\n";
+      echo "\n\nChecked $tel objects, removed itemID from $telRemoved objects.\n\n";
     }
     
     //add
@@ -103,7 +103,7 @@ function islandora_proai_pids() {
               $tel++;
               if ($tel % 10 == 0) echo "\tchecked: $tel, added: $telAdded\r";
             }
-            echo "\n\tAdded itemID to $telAdded objects.\n\n";
+            echo "\n\n\tChecked $tel objects, added itemID to $telAdded objects.\n\n";
           }
           
         }

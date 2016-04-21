@@ -1,0 +1,57 @@
+<mods 
+    xmlns="http://www.loc.gov/mods/v3" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.6" 
+    xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
+  <abstract>This paper addresses the method of manufactured solutions for RANS solvers, i.e. in the context of the calculation of incompressible turbulent flows with eddy-viscosity turbulence models. The difficulties caused by damping and/or blending functions included in the turbulence models are discussed. The need to manufacture the turbulence quantities included in the turbulence models is illustrated with an example for the Spalart-Allmaras one-equation model.</abstract>
+  <accessCondition>(c) 2006 Eca, L.; Hoekstra, M.</accessCondition>
+  <genre> Conference paper</genre>
+  <genre>working paper</genre>
+  <identifier type="uri">uuid:c2c9b8de-292a-40a0-95e9-7db0edf2b491</identifier>
+  <identifier type="isbn">90-9012428-4</identifier>
+  <language>
+    <languageTerm authority="rfc3066" type="code">en</languageTerm>
+  </language>
+  <name type="personal">
+    <namePart type="given">Frits</namePart>
+    <namePart type="family">van Latum</namePart>
+  </name>
+  <name type="personal">
+    <role>
+      <roleTerm authority="marcrelator" type="text">author</roleTerm>
+    </role>
+    <namePart type="given">L.</namePart>
+    <namePart type="family">Eca</namePart>
+  </name>
+  <name type="personal">
+    <role>
+      <roleTerm authority="marcrelator" type="text">editor</roleTerm>
+    </role>
+    <namePart type="given">M.</namePart>
+    <namePart type="family">Hoekstra</namePart>
+  </name>
+  <originInfo>
+    <dateIssued>2006-09-08</dateIssued>
+  </originInfo>
+  <relatedItem type="constituent">
+    <identifier type="local">uuid:46ec530c-9fb3-4aa1-983f-ccebfb32d841</identifier>
+  </relatedItem>
+  <subject>
+    <topic>code verification</topic>
+  </subject>
+  <subject>
+    <topic>manufactured solutions</topic>
+  </subject>
+  <subject>
+    <topic>order of accuracy</topic>
+  </subject>
+  <subject>
+    <topic>turbulent flow</topic>
+  </subject>
+  <subject>
+    <topic>eddy-viscosity</topic>
+  </subject>
+  <titleInfo>
+    <title>An introduction to CFD code verification including eddy-viscosity models</title>
+  </titleInfo>
+  <typeOfResource>text</typeOfResource>
+</mods>

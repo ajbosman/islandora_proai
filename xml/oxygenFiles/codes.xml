@@ -1,0 +1,275 @@
+<tud:relators xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.library.tudelft.nl/ns/transl/ codes.xsd"
+ xmlns:tud="http://www.library.tudelft.nl/ns/transl/">
+  <tud:transl code="abr" text="Abridger" />
+  <tud:transl code="acp" text="Art copyist" />
+  <tud:transl code="act" text="Actor" />
+  <tud:transl code="adi" text="Art director" />
+  <tud:transl code="adp" text="Adapter" />
+  <tud:transl code="aft" text="Author of afterword, colophon, etc." />
+  <tud:transl code="anl" text="Analyst" />
+  <tud:transl code="anm" text="Animator" />
+  <tud:transl code="ann" text="Annotator" />
+  <tud:transl code="ant" text="Bibliographic antecedent" />
+  <tud:transl code="ape" text="Appellee" />
+  <tud:transl code="apl" text="Appellant" />
+  <tud:transl code="app" text="Applicant" />
+  <tud:transl code="aqt" text="Author in quotations or text abstracts" />
+  <tud:transl code="arc" text="Architect" />
+  <tud:transl code="ard" text="Artistic director" />
+  <tud:transl code="arr" text="Arranger" />
+  <tud:transl code="art" text="Artist" />
+  <tud:transl code="asg" text="Assignee" />
+  <tud:transl code="asn" text="Associated name" />
+  <tud:transl code="ato" text="Autographer" />
+  <tud:transl code="att" text="Attributed name" />
+  <tud:transl code="auc" text="Auctioneer" />
+  <tud:transl code="aud" text="Author of dialog" />
+  <tud:transl code="aui" text="Author of introduction, etc." />
+  <tud:transl code="aus" text="Screenwriter" />
+  <tud:transl code="aut" text="Author" />
+  <tud:transl code="bdd" text="Binding designer" />
+  <tud:transl code="bjd" text="Bookjacket designer" />
+  <tud:transl code="bkd" text="Book designer" />
+  <tud:transl code="bkp" text="Book producer" />
+  <tud:transl code="blw" text="Blurb writer" />
+  <tud:transl code="bnd" text="Binder" />
+  <tud:transl code="bpd" text="Bookplate designer" />
+  <tud:transl code="brd" text="Broadcaster" />
+  <tud:transl code="brl" text="Braille embosser" />
+  <tud:transl code="bsl" text="Bookseller" />
+  <tud:transl code="cas" text="Caster" />
+  <tud:transl code="ccp" text="Conceptor" />
+  <tud:transl code="chr" text="Choreographer" />
+  <tud:transl code="-clb" text="Collaborator" />
+  <tud:transl code="cli" text="Client" />
+  <tud:transl code="cll" text="Calligrapher" />
+  <tud:transl code="clr" text="Colorist" />
+  <tud:transl code="clt" text="Collotyper" />
+  <tud:transl code="cmm" text="Commentator" />
+  <tud:transl code="cmp" text="Composer" />
+  <tud:transl code="cmt" text="Compositor" />
+  <tud:transl code="cnd" text="Conductor" />
+  <tud:transl code="cng" text="Cinematographer" />
+  <tud:transl code="cns" text="Censor" />
+  <tud:transl code="coe" text="Contestant-appellee" />
+  <tud:transl code="col" text="Collector" />
+  <tud:transl code="com" text="Compiler" />
+  <tud:transl code="con" text="Conservator" />
+  <tud:transl code="cor" text="Collection registrar" />
+  <tud:transl code="cos" text="Contestant" />
+  <tud:transl code="cot" text="Contestant-appellant" />
+  <tud:transl code="cou" text="Court governed" />
+  <tud:transl code="cov" text="Cover designer" />
+  <tud:transl code="cpc" text="Copyright claimant" />
+  <tud:transl code="cpe" text="Complainant-appellee" />
+  <tud:transl code="cph" text="Copyright holder" />
+  <tud:transl code="cpl" text="Complainant" />
+  <tud:transl code="cpt" text="Complainant-appellant" />
+  <tud:transl code="cre" text="Creator" />
+  <tud:transl code="crp" text="Correspondent" />
+  <tud:transl code="crr" text="Corrector" />
+  <tud:transl code="crt" text="Court reporter" />
+  <tud:transl code="csl" text="Consultant" />
+  <tud:transl code="csp" text="Consultant to a project" />
+  <tud:transl code="cst" text="Costume designer" />
+  <tud:transl code="ctb" text="Contributor" />
+  <tud:transl code="cte" text="Contestee-appellee" />
+  <tud:transl code="ctg" text="Cartographer" />
+  <tud:transl code="ctr" text="Contractor" />
+  <tud:transl code="cts" text="Contestee" />
+  <tud:transl code="ctt" text="Contestee-appellant" />
+  <tud:transl code="cur" text="Curator" />
+  <tud:transl code="cwt" text="Commentator for written text" />
+  <tud:transl code="dbp" text="Distribution place" />
+  <tud:transl code="dfd" text="Defendant" />
+  <tud:transl code="dfe" text="Defendant-appellee" />
+  <tud:transl code="dft" text="Defendant-appellant" />
+  <tud:transl code="dgg" text="Degree granting institution" />
+  <tud:transl code="dgs" text="Degree supervisor" />
+  <tud:transl code="dis" text="Dissertant" />
+  <tud:transl code="dln" text="Delineator" />
+  <tud:transl code="dnc" text="Dancer" />
+  <tud:transl code="dnr" text="Donor" />
+  <tud:transl code="dpc" text="Depicted" />
+  <tud:transl code="dpt" text="Depositor" />
+  <tud:transl code="drm" text="Draftsman" />
+  <tud:transl code="drt" text="Director" />
+  <tud:transl code="dsr" text="Designer" />
+  <tud:transl code="dst" text="Distributor" />
+  <tud:transl code="dtc" text="Data contributor" />
+  <tud:transl code="dte" text="Dedicatee" />
+  <tud:transl code="dtm" text="Data manager" />
+  <tud:transl code="dto" text="Dedicator" />
+  <tud:transl code="dub" text="Dubious author" />
+  <tud:transl code="edc" text="Editor of compilation" />
+  <tud:transl code="edm" text="Editor of moving image work" />
+  <tud:transl code="edt" text="Editor" />
+  <tud:transl code="egr" text="Engraver" />
+  <tud:transl code="elg" text="Electrician" />
+  <tud:transl code="elt" text="Electrotyper" />
+  <tud:transl code="eng" text="Engineer" />
+  <tud:transl code="enj" text="Enacting jurisdiction" />
+  <tud:transl code="etr" text="Etcher" />
+  <tud:transl code="evp" text="Event place" />
+  <tud:transl code="exp" text="Expert" />
+  <tud:transl code="fac" text="Facsimilist" />
+  <tud:transl code="fds" text="Film distributor" />
+  <tud:transl code="fld" text="Field director" />
+  <tud:transl code="flm" text="Film editor" />
+  <tud:transl code="fmd" text="Film director" />
+  <tud:transl code="fmk" text="Filmmaker" />
+  <tud:transl code="fmo" text="Former owner" />
+  <tud:transl code="fmp" text="Film producer" />
+  <tud:transl code="fnd" text="Funder" />
+  <tud:transl code="fpy" text="First party" />
+  <tud:transl code="frg" text="Forger" />
+  <tud:transl code="gis" text="Geographic information specialist" />
+  <tud:transl code="-grt" text="Graphic technician" />
+  <tud:transl code="his" text="Host institution" />
+  <tud:transl code="hnr" text="Honoree" />
+  <tud:transl code="hst" text="Host" />
+  <tud:transl code="ill" text="Illustrator" />
+  <tud:transl code="ilu" text="Illuminator" />
+  <tud:transl code="ins" text="Inscriber" />
+  <tud:transl code="inv" text="Inventor" />
+  <tud:transl code="isb" text="Issuing body" />
+  <tud:transl code="itr" text="Instrumentalist" />
+  <tud:transl code="ive" text="Interviewee" />
+  <tud:transl code="ivr" text="Interviewer" />
+  <tud:transl code="jud" text="Judge" />
+  <tud:transl code="jug" text="Jurisdiction governed" />
+  <tud:transl code="lbr" text="Laboratory" />
+  <tud:transl code="lbt" text="Librettist" />
+  <tud:transl code="ldr" text="Laboratory director" />
+  <tud:transl code="led" text="Lead" />
+  <tud:transl code="lee" text="Libelee-appellee" />
+  <tud:transl code="lel" text="Libelee" />
+  <tud:transl code="len" text="Lender" />
+  <tud:transl code="let" text="Libelee-appellant" />
+  <tud:transl code="lgd" text="Lighting designer" />
+  <tud:transl code="lie" text="Libelant-appellee" />
+  <tud:transl code="lil" text="Libelant" />
+  <tud:transl code="lit" text="Libelant-appellant" />
+  <tud:transl code="lsa" text="Landscape architect" />
+  <tud:transl code="lse" text="Licensee" />
+  <tud:transl code="lso" text="Licensor" />
+  <tud:transl code="ltg" text="Lithographer" />
+  <tud:transl code="lyr" text="Lyricist" />
+  <tud:transl code="mcp" text="Music copyist" />
+  <tud:transl code="mdc" text="Metadata contact" />
+  <tud:transl code="med" text="Medium" />
+  <tud:transl code="mfp" text="Manufacture place" />
+  <tud:transl code="mfr" text="Manufacturer" />
+  <tud:transl code="mod" text="Moderator" />
+  <tud:transl code="mon" text="Monitor" />
+  <tud:transl code="mrb" text="Marbler" />
+  <tud:transl code="mrk" text="Markup editor" />
+  <tud:transl code="msd" text="Musical director" />
+  <tud:transl code="mte" text="Metal-engraver" />
+  <tud:transl code="mtk" text="Minute taker" />
+  <tud:transl code="mus" text="Musician" />
+  <tud:transl code="nrt" text="Narrator" />
+  <tud:transl code="opn" text="Opponent" />
+  <tud:transl code="org" text="Originator" />
+  <tud:transl code="orm" text="Organizer" />
+  <tud:transl code="osp" text="Onscreen presenter" />
+  <tud:transl code="oth" text="Other" />
+  <tud:transl code="own" text="Owner" />
+  <tud:transl code="pan" text="Panelist" />
+  <tud:transl code="pat" text="Patron" />
+  <tud:transl code="pbd" text="Publishing director" />
+  <tud:transl code="pbl" text="Publisher" />
+  <tud:transl code="pdr" text="Project director" />
+  <tud:transl code="pfr" text="Proofreader" />
+  <tud:transl code="pht" text="Photographer" />
+  <tud:transl code="plt" text="Platemaker" />
+  <tud:transl code="pma" text="Permitting agency" />
+  <tud:transl code="pmn" text="Production manager" />
+  <tud:transl code="pop" text="Printer of plates" />
+  <tud:transl code="ppm" text="Papermaker" />
+  <tud:transl code="ppt" text="Puppeteer" />
+  <tud:transl code="pra" text="Praeses" />
+  <tud:transl code="prc" text="Process contact" />
+  <tud:transl code="prd" text="Production personnel" />
+  <tud:transl code="pre" text="Presenter" />
+  <tud:transl code="prf" text="Performer" />
+  <tud:transl code="prg" text="Programmer" />
+  <tud:transl code="prm" text="Printmaker" />
+  <tud:transl code="prn" text="Production company" />
+  <tud:transl code="pro" text="Producer" />
+  <tud:transl code="prp" text="Production place" />
+  <tud:transl code="prs" text="Production designer" />
+  <tud:transl code="prt" text="Printer" />
+  <tud:transl code="prv" text="Provider" />
+  <tud:transl code="pta" text="Patent applicant" />
+  <tud:transl code="pte" text="Plaintiff-appellee" />
+  <tud:transl code="ptf" text="Plaintiff" />
+  <tud:transl code="pth" text="Patent holder" />
+  <tud:transl code="ptt" text="Plaintiff-appellant" />
+  <tud:transl code="pup" text="Publication place" />
+  <tud:transl code="rbr" text="Rubricator" />
+  <tud:transl code="rcd" text="Recordist" />
+  <tud:transl code="rce" text="Recording engineer" />
+  <tud:transl code="rcp" text="Addressee" />
+  <tud:transl code="rdd" text="Radio director" />
+  <tud:transl code="red" text="Redaktor" />
+  <tud:transl code="ren" text="Renderer" />
+  <tud:transl code="res" text="Researcher" />
+  <tud:transl code="rev" text="Reviewer" />
+  <tud:transl code="rpc" text="Radio producer" />
+  <tud:transl code="rps" text="Repository" />
+  <tud:transl code="rpt" text="Reporter" />
+  <tud:transl code="rpy" text="Responsible party" />
+  <tud:transl code="rse" text="Respondent-appellee" />
+  <tud:transl code="rsg" text="Restager" />
+  <tud:transl code="rsp" text="Respondent" />
+  <tud:transl code="rsr" text="Restorationist" />
+  <tud:transl code="rst" text="Respondent-appellant" />
+  <tud:transl code="rth" text="Research team head" />
+  <tud:transl code="rtm" text="Research team member" />
+  <tud:transl code="sad" text="Scientific advisor" />
+  <tud:transl code="sce" text="Scenarist" />
+  <tud:transl code="scl" text="Sculptor" />
+  <tud:transl code="scr" text="Scribe" />
+  <tud:transl code="sds" text="Sound designer" />
+  <tud:transl code="sec" text="Secretary" />
+  <tud:transl code="sgd" text="Stage director" />
+  <tud:transl code="sgn" text="Signer" />
+  <tud:transl code="sht" text="Supporting host" />
+  <tud:transl code="sll" text="Seller" />
+  <tud:transl code="sng" text="Singer" />
+  <tud:transl code="spk" text="Speaker" />
+  <tud:transl code="spn" text="Sponsor" />
+  <tud:transl code="spy" text="Second party" />
+  <tud:transl code="srv" text="Surveyor" />
+  <tud:transl code="std" text="Set designer" />
+  <tud:transl code="stg" text="Setting" />
+  <tud:transl code="stl" text="Storyteller" />
+  <tud:transl code="stm" text="Stage manager" />
+  <tud:transl code="stn" text="Standards body" />
+  <tud:transl code="str" text="Stereotyper" />
+  <tud:transl code="tcd" text="Technical director" />
+  <tud:transl code="tch" text="Teacher" />
+  <tud:transl code="ths" text="Thesis advisor" />
+  <tud:transl code="tld" text="Television director" />
+  <tud:transl code="tlp" text="Television producer" />
+  <tud:transl code="trc" text="Transcriber" />
+  <tud:transl code="trl" text="Translator" />
+  <tud:transl code="tyd" text="Type designer" />
+  <tud:transl code="tyg" text="Typographer" />
+  <tud:transl code="uvp" text="University place" />
+  <tud:transl code="vac" text="Voice actor" />
+  <tud:transl code="vdg" text="Videographer" />
+  <tud:transl code="-voc" text="Vocalist" />
+  <tud:transl code="wac" text="Writer of added commentary" />
+  <tud:transl code="wal" text="Writer of added lyrics" />
+  <tud:transl code="wam" text="Writer of accompanying material" />
+  <tud:transl code="wat" text="Writer of added text" />
+  <tud:transl code="wdc" text="Woodcutter" />
+  <tud:transl code="wde" text="Wood engraver" />
+  <tud:transl code="win" text="Writer of introduction" />
+  <tud:transl code="wit" text="Witness" />
+  <tud:transl code="wpr" text="Writer of preface" />
+  <tud:transl code="wst" text="Writer of supplementary textual content" />
+</tud:relators>

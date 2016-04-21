@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.library.tudelft.nl/ns/transl/" xmlns:tud="http://www.library.tudelft.nl/ns/transl/">
+  <xs:element name="relators">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="tud:transl"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transl">
+    <xs:complexType>
+      <xs:attribute name="code" use="required"/>
+      <xs:attribute name="text" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

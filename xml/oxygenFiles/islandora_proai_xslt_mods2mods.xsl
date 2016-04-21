@@ -1,15 +1,9 @@
-<xsl:stylesheet 
-  xmlns="http://www.w3.org/1999/xhtml" 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:mods="http://www.loc.gov/mods/v3" 
-  exclude-result-prefixes="#all" 
-  version="2.0" 
-  xpath-default-namespace="">
+<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:mods="http://www.loc.gov/mods/v3" exclude-result-prefixes="#all" version="2.0" xpath-default-namespace="">
 
-  <!-- on the server href should be: "/fedora/get/aux:xslt/SETTINGS"  -->
-  <xsl:import href="/fedora/get/aux:xslt/SETTINGS"/>
+  <!-- on the server href should be: "/fedora/get/aux:xslt/SETTINGS" 
+  <xsl:import href="/fedora/get/aux:xslt/SETTINGS"/> -->
+  <xsl:import href="islandora_proai_xslt_settings.xsl"/>
 
   <xsl:output encoding="UTF-8" indent="yes" media-type="text/xml" method="xml" omit-xml-declaration="no" version="1.0"/>
 

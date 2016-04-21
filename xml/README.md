@@ -159,7 +159,7 @@ Ingest the objects in the form Administration » Islandora » Islandora Utility Mo
 ## Debugging XSLT
 First try `http://your.server.somewhere/fedora/objects/PID/methods` where PID is a fedora PID of an object with a PROAI enabled content model. You should see something like:
 
-![PROAI content model](../documentation/methods.JPG)
+![PROAI content model](../documentation/methods.jpg)
 
 Click `Run` to test. 
 

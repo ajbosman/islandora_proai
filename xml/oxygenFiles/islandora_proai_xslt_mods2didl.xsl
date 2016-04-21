@@ -1,15 +1,10 @@
-<xsl:stylesheet 
-  xmlns="http://www.w3.org/1999/xhtml" 
-  xmlns:ds="http://www.library.tudelft.nl/ns/dataset/" 
-  xmlns:sparql="http://www.w3.org/2001/sw/DataAccess/rf1/result"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-  xmlns:mods="http://www.loc.gov/mods/v3"
+<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:ds="http://www.library.tudelft.nl/ns/dataset/" xmlns:sparql="http://www.w3.org/2001/sw/DataAccess/rf1/result"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mods="http://www.loc.gov/mods/v3"
   xpath-default-namespace="" version="2.0">
 
-  <!-- on the server href should be: "/fedora/get/aux:xslt/MODS2MODS" --> 
-  <xsl:import href="/fedora/get/aux:xslt/MODS2MODS"/>
+  <!-- on the server href should be: "/fedora/get/aux:xslt/MODS2MODS" 
+  <xsl:import href="/fedora/get/aux:xslt/MODS2MODS"/> -->
+  <xsl:import href="islandora_proai_xslt_mods2mods.xsl"/>
 
   <xsl:output encoding="UTF-8" indent="yes" media-type="text/xml" method="xml" omit-xml-declaration="no" version="1.0"/>
 

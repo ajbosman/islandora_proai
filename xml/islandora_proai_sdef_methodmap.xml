@@ -6,6 +6,7 @@
         <fmm:ValidParm value="no"></fmm:ValidParm>
       </fmm:ValidParmValues>
     </fmm:UserInputParm>
+    <fmm:UserInputParm defaultValue="oai_dc" parmName="st" passBy="VALUE" required="false" />
   </fmm:Method>
   <fmm:Method operationName="mods">
     <fmm:UserInputParm defaultValue="no" parmName="CLEAR_CACHE" passBy="VALUE" required="false">
@@ -14,6 +15,7 @@
         <fmm:ValidParm value="no"></fmm:ValidParm>
       </fmm:ValidParmValues>
     </fmm:UserInputParm>
+    <fmm:UserInputParm defaultValue="mods" parmName="st" passBy="VALUE" required="false" />
   </fmm:Method>
   <fmm:Method operationName="nl_didl">
     <fmm:UserInputParm defaultValue="no" parmName="CLEAR_CACHE" passBy="VALUE" required="false">
@@ -22,5 +24,6 @@
         <fmm:ValidParm value="no"></fmm:ValidParm>
       </fmm:ValidParmValues>
     </fmm:UserInputParm>
+    <fmm:UserInputParm defaultValue="didl" parmName="st" passBy="VALUE" required="false" />
   </fmm:Method>
 </fmm:MethodMap>

@@ -2,17 +2,10 @@
 
 /**
  * @file
- * Module used to respond to OAI requests.
-
-todo: oai:tudelft.nl: voor uuid????
-      correcte mods
-      didl container
-      ok / xslt files xsl extensie
-      ok / xslt's: (evt DC2DC DC2DIDL)
-
-testen: deleted records
-        embargo
-
+ * Module used to respond to OAI requests via PROAI.
+ *
+ * todo: tests of: deleted records, embargo, campus_only
+ * 
  */
 
 /**
@@ -64,13 +57,12 @@ function islandora_proai_menu() {
 }
 
 /**
- * Allows modules to alter the object or block/modify the given action.
+ * Implements HOOK_islandora_object_alter
+ * See module islandora, file: islandora.api.php
  *
- * This alter hook will be called before any object is ingested, modified or
- * purged.
- *
- * Changing object properties such as "label", or "state", are considered
- * modifications, where as manipulating an object's datstreams are not.
+ * This functions adds an extra relation http://www.openarchives.org/OAI/2.0/itemID in RELS_EXT
+ * with the ID of the object with a prefix that is stored in the variable 'islandora_proai_prefix' (if present).
+ * The relation is only added to objects that have a proai activated content model and that belong to a proai activated collection.
  *
  * @param AbstractObject $object
  *   The object to alter.
@@ -97,15 +89,17 @@ function islandora_proai_islandora_object_alter(AbstractObject $object, array &$
     //get content models and collections
     $collections_saved = variable_get('islandora_proai_collections',  array());
     $cmodels_saved = variable_get('islandora_proai_cmodels', array());
+    $prefix = variable_get('islandora_proai_prefix','');
+    if (strlen($prefix) > 0) $prefix .= ':';
+    
     $cmodels = $object->relationships->get(FEDORA_MODEL_URI,'hasModel');
     $collections = $object->relationships->get(FEDORA_RELS_EXT_URI,'isMemberOfCollection');
     $object_itemid = $object->relationships->get('http://www.openarchives.org/OAI/2.0/','itemID');
+    //remove existing relationships, just to be sure
+    if (count($object_itemid) > 0) $object->relationships->remove('http://www.openarchives.org/OAI/2.0/','itemID');
     
     if (islandora_proai_is_proai_object($cmodels, $cmodels_saved, $collections, $collections_saved)) {
-      if (count($object_itemid) == 0) $object->relationships->add('http://www.openarchives.org/OAI/2.0/','itemID',$object->id,RELS_TYPE_PLAIN_LITERAL);
-    }
-    else { 
-      if (count($object_itemid) > 0) $object->relationships->remove('http://www.openarchives.org/OAI/2.0/','itemID');
+      $object->relationships->add('http://www.openarchives.org/OAI/2.0/','itemID',$prefix.$object->id,RELS_TYPE_PLAIN_LITERAL);
     }
   }
 }

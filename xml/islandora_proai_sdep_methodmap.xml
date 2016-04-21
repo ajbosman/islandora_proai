@@ -6,6 +6,7 @@
         <fmm:ValidParm value="no"/>
       </fmm:ValidParmValues>
     </fmm:UserInputParm>
+    <fmm:UserInputParm defaultValue="oai_dc" parmName="st" passBy="VALUE" required="false" />
     <fmm:UserInputParm defaultValue="" parmName="key" passBy="VALUE" required="false"/>
     <fmm:DefaultInputParm parmName="pid" defaultValue="$pid" passBy="VALUE" required="true"/>
     <fmm:DatastreamInputParm parmName="DC" passBy="URL_REF" required="true"/>
@@ -18,6 +19,7 @@
         <fmm:ValidParm value="no"/>
       </fmm:ValidParmValues>
     </fmm:UserInputParm>
+    <fmm:UserInputParm defaultValue="mods" parmName="st" passBy="VALUE" required="false" />
     <fmm:UserInputParm defaultValue="" parmName="key" passBy="VALUE" required="false"/>
     <fmm:DatastreamInputParm parmName="MODS" passBy="URL_REF" required="true"/>
     <fmm:DefaultInputParm parmName="pid" defaultValue="$pid" passBy="VALUE" required="true"/>
@@ -30,6 +32,7 @@
         <fmm:ValidParm value="no"/>
       </fmm:ValidParmValues>
     </fmm:UserInputParm>
+    <fmm:UserInputParm defaultValue="didl" parmName="st" passBy="VALUE" required="false" />
     <fmm:UserInputParm defaultValue="" parmName="key" passBy="VALUE" required="false"/>
     <fmm:DefaultInputParm parmName="pid" defaultValue="$pid" passBy="VALUE" required="true"/>
     <fmm:DatastreamInputParm parmName="MODS" passBy="URL_REF" required="true"/>

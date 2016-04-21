@@ -13,9 +13,9 @@
  *
  */
 
-define('FEDORA_URL', 'http://your.server.somewhere/fedora');
-define('FEDORA_USER','xxxxxxxxx');
-define('FEDORA_PASSWORD','xxxxxxxxx');
+define('FEDORA_URL', 'http://your.server.somewehere/fedora');
+define('FEDORA_USER','fedoraAdmin');
+define('FEDORA_PASSWORD','xxxxxxxx');
 define('OAI_NAMESPACE','http://www.openarchives.org/OAI/2.0/');
 
 include_once 'sites/all/libraries/tuque/RepositoryConnection.php';

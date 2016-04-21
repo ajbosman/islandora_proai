@@ -1,31 +1,26 @@
-<xsl:stylesheet 
-  xmlns:decoder="java:java.net.URLDecoder" 
-  xmlns:ds="http://www.library.tudelft.nl/ns/dataset/" 
-  xmlns:file="java.io.File" 
-  xmlns:didl="urn:mpeg:mpeg21:2002:02-DIDL-NS"
-  xmlns:sparql="http://www.w3.org/2001/sw/DataAccess/rf1/result" 
-  xmlns:fr="info:fedora/fedora-system:def/relations-external#" 
-  xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
-  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
-  xmlns:mods="http://www.loc.gov/mods/v3" 
-  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<xsl:stylesheet xmlns:decoder="java:java.net.URLDecoder" xmlns:ds="http://www.library.tudelft.nl/ns/dataset/" xmlns:file="java.io.File" xmlns:didl="urn:mpeg:mpeg21:2002:02-DIDL-NS"
+  xmlns:sparql="http://www.w3.org/2001/sw/DataAccess/rf1/result" xmlns:fr="info:fedora/fedora-system:def/relations-external#" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   version="2.0">
 
   <!-- thisPid is a parameter defined in sdep:oai, containing the actual Fedora PID. 
        st is a parameter defining whether the stylesheet should use nl_didl rules
        See METHODMAP and WSDL. 
        Background remarks on pid in: https://wiki.duraspace.org/display/FEDORA34/Creating+a+Service+Deployment
-       thisPid and st must be declared without a value otherwise they are ignored -->
-  <xsl:param name="thisPid" />
-  <xsl:param name="st" /> 
+       thisPid and st must be declared without a value otherwise they are ignored 
+  <xsl:variable name="thisPid" />
+  <xsl:variable name="st" /> -->
+  <xsl:variable name="st" select="'didl'"/>
+  <xsl:variable name="thisPid" select="'uuid:79ed6374-697f-47cb-84c4-3f4b18c3c53b'"/>
   <xsl:variable name="sparqlPid" select="concat('info:fedora/',$thisPid)"/>
 
   <!-- Do not change the following line: it is replaced by the islandora_proai module with an admin parameter -->
   <!--PREFIXPARAM-->
+  <xsl:variable name="oaiPrefix" select="'oai:tudelft.nl'"/>
 
-  <!-- on the server "local" must be 'http://localhost:8080/' -->
-  <xsl:variable name="local" select="'http://localhost:8080/'"/> 
+  <!-- on the server "local" must be 'http://localhost:8080/'
+  <xsl:variable name="local" select="'http://localhost:8080/'"/> -->
+  <xsl:variable name="local" select="'http://repo3dev.tudelft.nl/'"/>
 
   <xsl:variable name="urnNBNTudelft" select="'urn:NBN:nl:ui:24-'"/>
   <xsl:variable name="resolver" select="'http://resolver.tudelft.nl/'"/>

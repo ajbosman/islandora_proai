@@ -22,18 +22,21 @@
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="dcRequest">
+    <wsdl:part name="st" type="this:inputType"/>
     <wsdl:part name="pid" type="this:inputType"/>
     <wsdl:part name="source" type="this:inputType"></wsdl:part>
     <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
     <wsdl:part name="key" type="this:inputType"></wsdl:part>
   </wsdl:message>
   <wsdl:message name="modsRequest">
+    <wsdl:part name="st" type="this:inputType"/>
     <wsdl:part name="pid" type="this:inputType"/>
     <wsdl:part name="source" type="this:inputType"></wsdl:part>
     <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
     <wsdl:part name="key" type="this:inputType"></wsdl:part>
   </wsdl:message>
   <wsdl:message name="nl_didlRequest">
+    <wsdl:part name="st" type="this:inputType"/>
     <wsdl:part name="pid" type="this:inputType"/>
     <wsdl:part name="source" type="this:inputType"></wsdl:part>
     <wsdl:part name="CLEAR_CACHE" type="this:CLEAR_CACHEType"></wsdl:part>
@@ -64,17 +67,17 @@
   <wsdl:binding name="FedoraSaxon_http" type="this:FedoraSaxonPortType">
     <http:binding verb="GET"></http:binding>
     <wsdl:operation name="dc">
-      <http:operation location="SaxonServlet?source=(DC)&amp;style=(COPY)&amp;thisPid=(pid)&amp;clear-stylesheet-cache=(CLEAR_CACHE)"></http:operation>
+      <http:operation location="SaxonServlet?source=(DC)&amp;style=(COPY)&amp;thisPid=(pid)&amp;st=(st)&amp;clear-stylesheet-cache=(CLEAR_CACHE)"></http:operation>
       <wsdl:input></wsdl:input>
       <wsdl:output></wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="mods">
-      <http:operation location="SaxonServlet?source=(MODS)&amp;style=(MODS2MODS)&amp;thisPid=(pid)&amp;clear-stylesheet-cache=(CLEAR_CACHE)"></http:operation>
+      <http:operation location="SaxonServlet?source=(MODS)&amp;style=(MODS2MODS)&amp;thisPid=(pid)&amp;st=(st)&amp;clear-stylesheet-cache=(CLEAR_CACHE)"></http:operation>
       <wsdl:input></wsdl:input>
       <wsdl:output></wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="nl_didl">
-      <http:operation location="SaxonServlet?source=(MODS)&amp;style=(MODS2DIDL)&amp;thisPid=(pid)&amp;clear-stylesheet-cache=(CLEAR_CACHE)"></http:operation>
+      <http:operation location="SaxonServlet?source=(MODS)&amp;style=(MODS2DIDL)&amp;thisPid=(pid)&amp;st=(st)&amp;clear-stylesheet-cache=(CLEAR_CACHE)"></http:operation>
       <wsdl:input></wsdl:input>
       <wsdl:output></wsdl:output>
     </wsdl:operation>

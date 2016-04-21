@@ -1,0 +1,150 @@
+
+<?xml version='1.0' encoding='UTF-8'?>
+<OAI-PMH 
+  xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns="http://www.openarchives.org/OAI/2.0/" 
+  xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+  <responseDate>2016-03-29T13:14:31Z</responseDate>
+  <request verb="GetRecord" metadataPrefix="nl_didl" identifier="oai:tudelft.nl:uuid:86513f19-0e70-4927-bc43-462e154d72dd">http://oai.tudelft.nl/ir</request>
+  <GetRecord>
+    <record>
+      <header>
+        <identifier>oai:tudelft.nl:uuid:86513f19-0e70-4927-bc43-462e154d72dd</identifier>
+        <datestamp>2009-04-24T08:38:36Z</datestamp>
+        <setSpec>A-set</setSpec>
+      </header>
+      <metadata>
+        <didl:DIDL 
+          xmlns:dcterms="http://purl.org/dc/terms/" 
+          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+          xmlns:dii="urn:mpeg:mpeg21:2002:01-DII-NS" 
+          xmlns:didl="urn:mpeg:mpeg21:2002:02-DIDL-NS" 
+          xsi:schemaLocation="
+              urn:mpeg:mpeg21:2002:02-DIDL-NS 
+              http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/did/didl.xsd 
+              urn:mpeg:mpeg21:2002:01-DII-NS 
+              http://standards.iso.org/ittf/PubliclyAvailableStandards/MPEG-21_schema_files/dii/dii.xsd"
+        >
+          <didl:Item>
+            <didl:Descriptor>
+              <didl:Statement mimeType="application/xml">
+                <dii:Identifier>urn:NBN:nl:ui:24-uuid:86513f19-0e70-4927-bc43-462e154d72dd</dii:Identifier>
+              </didl:Statement>
+            </didl:Descriptor>
+            <didl:Descriptor>
+              <didl:Statement mimeType="application/xml">
+                <dcterms:modified>2009-04-24T08:38:36</dcterms:modified>
+              </didl:Statement>
+            </didl:Descriptor>
+            <didl:Component>
+              <didl:Resource mimeType="text/html" ref="http://resolver.tudelft.nl/uuid:86513f19-0e70-4927-bc43-462e154d72dd"/>
+            </didl:Component>
+            <didl:Item>
+              <didl:Descriptor>
+                <didl:Statement mimeType="application/xml">
+                  <rdf:type rdf:resource="info:eu-repo/semantics/descriptiveMetadata"/>
+                </didl:Statement>
+              </didl:Descriptor>
+              <didl:Component>
+                <didl:Resource mimeType="application/xml">
+                  <mods:mods xmlns:mods="http://www.loc.gov/mods/v3" xmlns:dai="info:eu-repo/dai" version="3.2" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-2.xsd">
+                    <mods:identifier type="uri">uuid:86513f19-0e70-4927-bc43-462e154d72dd</mods:identifier>
+                    <mods:identifier type="isbn">90-5584-072-6</mods:identifier>
+                    <mods:location>
+                      <mods:url>http://resolver.tudelft.nl/uuid:86513f19-0e70-4927-bc43-462e154d72dd</mods:url>
+                    </mods:location>
+                    <mods:titleInfo>
+                      <mods:title>Hub exchange operations in intermodal hub-and spoke networks : a performance comparison of rail-rail exchange facilities</mods:title>
+                    </mods:titleInfo>
+                    <mods:abstract>The implementation of hub-and-spoke networks in intermodal transport is suggested as one of the potential solutions for helping to increase the intermodal market share. Traditionally, trains are shunted at hubs; this is a time-consuming process. Since the early 1990s a new type of intermodal terminal, specifically designed for fast tran-shipment at nodes in hub-and-spoke networks, has been introduced in Europe. These hub terminals could replace this time-consuming shunting. Studies on the new hub terminals suggest that they may perform more efficiently than shunting yards. However, a systematic comparison to reveal the operational and costs differences be-tween shunting and these new hub-terminals for a broad range of situations still lacks. 
+
+The main objective of the study was to develop a model to identify favourable opera-tional conditions for new hub terminals to be implemented and to quantify their op-erational performances in relation to alternative hub exchange facilities. Simulation models were developed to study rail-rail exchange operations at new hub-terminals, hump and flat shuntings yard and road-rail terminals. </mods:abstract>
+                    <mods:name type="personal">
+                      <mods:displayForm>Bontekoning, Y.M.</mods:displayForm>
+                      <mods:namePart>Bontekoning, Y.M.</mods:namePart>
+                      <mods:role>
+                        <mods:roleTerm type="code" authority="marcrelator">aut</mods:roleTerm>
+                      </mods:role>
+                    </mods:name>
+                    <mods:name type="personal">
+                      <mods:displayForm>Priemus, H.</mods:displayForm>
+                      <mods:namePart>Priemus, H.</mods:namePart>
+                      <mods:role>
+                        <mods:roleTerm type="code" authority="marcrelator">ths</mods:roleTerm>
+                      </mods:role>
+                    </mods:name>
+                    <mods:name type="personal">
+                      <mods:displayForm>Dekker, R.</mods:displayForm>
+                      <mods:namePart>Dekker, R.</mods:namePart>
+                      <mods:role>
+                        <mods:roleTerm type="code" authority="marcrelator">ths</mods:roleTerm>
+                      </mods:role>
+                    </mods:name>
+                    <mods:name type="corporate">
+                      <mods:namePart>TU Delft</mods:namePart>
+                      <mods:namePart>OTB</mods:namePart>
+                      <mods:role>
+                        <mods:roleTerm type="code" authority="marcrelator">org</mods:roleTerm>
+                      </mods:role>
+                    </mods:name>
+                    <mods:name type="corporate">
+                      <mods:namePart>TU Delft, Delft University of Technology</mods:namePart>
+                      <mods:role>
+                        <mods:roleTerm type="code" authority="marcrelator">dgg</mods:roleTerm>
+                      </mods:role>
+                    </mods:name>
+                    <mods:language>
+                      <mods:languageTerm type="code" authority="rfc3066">en</mods:languageTerm>
+                    </mods:language>
+                    <mods:originInfo>
+                      <mods:publisher>IOS Press</mods:publisher>
+                      <mods:dateIssued encoding="iso8601">2006-02-06</mods:dateIssued>
+                    </mods:originInfo>
+                    <mods:typeOfResource>text</mods:typeOfResource>
+                    <mods:genre>info:eu-repo/semantics/doctoralThesis</mods:genre>
+                    <mods:subject>
+                      <mods:topic>freight</mods:topic>
+                      <mods:topic>intermodal</mods:topic>
+                      <mods:topic>rail</mods:topic>
+                      <mods:topic>terminals</mods:topic>
+                      <mods:topic>shunting</mods:topic>
+                      <mods:topic>hub-and-spoke</mods:topic>
+                    </mods:subject>
+                    <mods:accessCondition>(c) 2006 Y.M. Bontekoning</mods:accessCondition>
+                  </mods:mods>
+                </didl:Resource>
+              </didl:Component>
+            </didl:Item>
+            <didl:Item>
+              <didl:Descriptor>
+                <didl:Statement mimeType="application/xml">
+                  <rdf:type rdf:resource="info:eu-repo/semantics/objectFile"/>
+                </didl:Statement>
+              </didl:Descriptor>
+              <didl:Descriptor>
+                <didl:Statement mimeType="application/xml">
+                  <dcterms:accessRights>http://purl.org/eprint/accessRights/OpenAccess</dcterms:accessRights>
+                </didl:Statement>
+              </didl:Descriptor>
+              <didl:Component>
+                <didl:Resource mimeType="application/pdf" ref="http://repository.tudelft.nl/assets/uuid:86513f19-0e70-4927-bc43-462e154d72dd/otb_bontekoning_20060206.pdf"/>
+              </didl:Component>
+            </didl:Item>
+            <didl:Item>
+              <didl:Descriptor>
+                <didl:Statement mimeType="application/xml">
+                  <rdf:type rdf:resource="info:eu-repo/semantics/humanStartPage"/>
+                </didl:Statement>
+              </didl:Descriptor>
+              <didl:Component>
+                <didl:Resource mimeType="text/html" ref="http://resolver.tudelft.nl/uuid:86513f19-0e70-4927-bc43-462e154d72dd"/>
+              </didl:Component>
+            </didl:Item>
+          </didl:Item>
+        </didl:DIDL>
+      </metadata>
+    </record>
+  </GetRecord>
+</OAI-PMH>
